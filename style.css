@@ -3,6 +3,7 @@ h1,
 p {
   margin: 0;
   padding: 0;
+  z-index: 1;
 }
 
 body {
@@ -19,7 +20,7 @@ header {
 
 header img {
   width: 70px;
-  height: 100%;
+  height: 70px;
 }
 
 header div {
@@ -44,24 +45,84 @@ header div a:hover::after {
   background-color: white;
 }
 
-section {
-  padding: 40px;
+.container {
+  background-image: url("images/main\ bg\ img.jpg");
+  height: 180vh;
+  background-size: cover;
+  background-position: center;
+  padding: 80px;
+  color: #ffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* z-index: 1; */
+}
+.container::before {
+  content: " ";
+  position: absolute;
+  top: 70px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  height: 150vh;
+  width: 100%;
+  z-index: 0;
+}
+.container h1 {
+  position: relative;
+  font-weight: bolder;
+  font-size: 60px;
+  line-height: 60px;
+  text-align: center;
+  z-index: 1;
+  color: #f3f4f6;
+  font-weight: 800;
 }
 
-h1,
-h3 {
-  color: #333;
+.container img {
+  filter: brightness(50%);
+  z-index: -1;
 }
 
-.btn {
+.container h3 {
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  color: #e5e7eb;
+  z-index: 1;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.container p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: white;
+  text-align: justify;
+  z-index: 1;
+}
+.button button a {
   display: inline-block;
   padding: 10px 20px;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
   background-color: #333;
   color: white;
-  text-decoration: none;
   margin-right: 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
 }
-
 
 body {
   background-color: #f0f0f0;
